@@ -7,7 +7,7 @@
  */
 public class Hello_world
 {
-    public static void()
+    public static void main()
     {
         System.out.println("Hello World!");
     }
