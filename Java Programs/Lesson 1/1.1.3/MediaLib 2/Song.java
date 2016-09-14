@@ -2,7 +2,7 @@
  * Song is a class the generates objects (songs) in the Media Lib project.
  * 
  * @author (Otakar Andrysek) 
- * @version (2.0)
+ * @version (2.1)
  * @date (9/14/2016)
  */
 public class Song
@@ -11,18 +11,16 @@ public class Song
     private int rating;
     private String title = "";
     private double price;
-    private boolean favorite;
 
     /**
      * Constructor for objects of class Song
      */
-    public Song()
+    public Song(String title, double price, int rating)
     {
         // Initialise instance variables
-        rating = 0;
-        title = "";
-        price = 0.0;
-        favorite = false;
+        this.rating = rating;
+        this.title = title;
+        this.price = price;
     }
     
     public String getTitle() 
@@ -53,15 +51,5 @@ public class Song
     public void setPrice(double p)      // Added mutator in 1.1.3
     {
         price = p;
-    }
-    
-    public void addToFavorites()        // This mutator sets a song as a favorite
-    {
-        favorite = true;
-    }
-    
-    public boolean getFavorite()
-    {
-        return favorite;
     }
 }

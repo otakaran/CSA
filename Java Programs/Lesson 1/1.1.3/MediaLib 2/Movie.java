@@ -2,8 +2,8 @@
  * Movie descrip.
  * 
  * @author (Otakar Andrysek) 
- * @version (.1)
- * @date (9/12/2016)
+ * @version (2.0)
+ * @date (9/14/2016)
  */
 public class Movie
 {
