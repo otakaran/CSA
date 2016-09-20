@@ -63,20 +63,17 @@ public class MediaLib
        System.out.println();
        
        // Movies
-       Movie movie1 = new Movie("Cars", 8);
-       movie1.setDuration(154);
+       Movie movie1 = new Movie("Cars", 154, 8);
        System.out.println(movie1.getTitle());
        System.out.println(movie1.getRating());
        System.out.println(movie1.getDuration());
        
-       Movie movie2 = new Movie("Hobbit", 4);
-       movie2.setDuration(153);
+       Movie movie2 = new Movie("Hobbit", 153, 4);
        System.out.println(movie2.getTitle());
        System.out.println(movie2.getRating());
        System.out.println(movie2.getDuration());
        
-       Movie movie3 = new Movie("Rabbit", 7);
-       movie3.setDuration(100);
+       Movie movie3 = new Movie("Rabbit", 100, 7);
        System.out.println(movie3.getTitle());
        System.out.println(movie3.getRating());
        System.out.println(movie3.getDuration());

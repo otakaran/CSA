@@ -74,19 +74,21 @@ public class Movie
         return minutes;
     }
     
-    public int getTotalDuration() 
+    public String getTotalDuration() 
     {
-        return totalDuration;
+        return "Hours: " + totalDuration / 60 + " Minutes: " + totalDuration % 60;
     }
     
-    public double getAverageDuration() 
+    public String getAverageDuration() 
     {
-        return averageDuration;
+        return "Hours: " + Math.round(averageDuration / 60) + " Minutes: " + averageDuration % 60;
     }
     
-    public Movie(String title, int rating) {
+    public Movie(String title, int duration, int rating) 
+    {
         this.title = title;
         this.rating = rating;
+        this.duration = duration;
         this.totalDuration += duration;
         this.averageDuration = totalDuration / 3;
     }
