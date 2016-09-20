@@ -8,6 +8,6 @@ comment2.params=t
 comment2.target=void\ setTitle(java.lang.String)
 comment3.params=
 comment3.target=int\ getRating()
-comment4.params=t
+comment4.params=r
 comment4.target=void\ setRating(int)
 numComments=5

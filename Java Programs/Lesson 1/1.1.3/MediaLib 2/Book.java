@@ -36,8 +36,8 @@ public class Book
         return rating;
     }
     
-    public void setRating(int t) 
+    public void setRating(int r) 
     {
-        rating = 1;
+        rating = r;
     }
 }

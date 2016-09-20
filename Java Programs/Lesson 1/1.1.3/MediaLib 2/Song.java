@@ -5,23 +5,32 @@
  * @version (2.1)
  * @date (9/14/2016)
  */
+
 public class Song
 {
     // Instance variables
     private int rating;
     private String title = "";
     private double price;
+    private boolean favorite;
+    
+    // Declare Acuumulators
+    private static double totalCost;
+    private static int numSongs;
+    private static int totalRatings;
+    private static double averageCost;
 
     /**
      * Constructor for objects of class Song
      */
-    public Song(String title, double price, int rating)
+    public Song()
     {
         // Initialise instance variables
-        this.rating = rating;
-        this.title = title;
-        this.price = price;
-    }
+        rating = 0;
+        title = "";
+        price = 0.00;
+        favorite = false;
+    } 
     
     public String getTitle() 
     {
@@ -38,9 +47,9 @@ public class Song
         return rating;
     }
     
-    public void setRating(int t) 
+    public void setRating(int r) 
     {
-        rating = 1;
+        rating = r;
     }
     
     public double getPrice()      // Added accessor in 1.1.3
@@ -51,5 +60,40 @@ public class Song
     public void setPrice(double p)      // Added mutator in 1.1.3
     {
         price = p;
+    }
+    
+    public void addToFavorites() 
+    {
+        favorite = true;
+    }
+    
+    public double getTotalCost() 
+    {
+        return totalCost;
+    }
+    
+    public int getNumSongs() 
+    {
+        return numSongs;
+    }
+    
+    public int getTotalRatings() 
+    {
+        return totalRatings;
+    }
+    
+    public double getAverageCost() 
+    {
+        return averageCost;
+    }
+    
+    public Song(String title, double price, int rating) {
+            this.title = title;
+            this.price = price;
+            this.rating = rating;
+            this.totalCost += price;
+            this.numSongs += 1;
+            this.totalRatings += rating;
+            this.averageCost = totalCost / numSongs;
     }
 }
