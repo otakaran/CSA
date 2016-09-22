@@ -1,34 +1,27 @@
-
 /**
  * This is the main class in the Weather Project.
  * 
  * @author Otakar Andrysek
- * @version .1
+ * @version .2
  * @date 9/20/2016
  */
+
+// The main class for the entire program
 public class StringTester
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class StringTester
-     */
-    public StringTester()
+    // The main function (method) for the entire program
+    public static void main()
     {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+        // Declare a weather condition vairable
+        String weatherCondition = "scattered thunderstorms";
+        
+        // Print some information about the "weatherCondition" variable
+        System.out.println(weatherCondition);   // Variable itself
+        System.out.println(weatherCondition.length());  // Variable Length
+        System.out.println(weatherCondition.substring(0,5));    // The first word
+        System.out.println(weatherCondition.indexOf("thunder")); // Find thunder in string
+        
+        // Pass some weather info into the weather coditional method
+        System.out.println(WeatherConditionals.getWeatherAdvice(32, "heavy snow"));
     }
 }
