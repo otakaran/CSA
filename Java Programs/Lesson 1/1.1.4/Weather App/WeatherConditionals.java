@@ -38,10 +38,10 @@ public class WeatherConditionals
         int error = 0;
         
         /**Welcome the user*/
-        System.out.println("Hello and welcome to my hiking weather system.");
+        System.out.println("\n\nHello and welcome to my hiking weather system.");
         System.out.println("I will give you a reccomendation based on the current weather ");
-        System.out.printf("Currently it is %s and %s degrees", description, temperature);
-        System.out.printf("The windchill is %s degrees and the humidity is %s", windchill, temperature);
+        System.out.printf("Currently it is %s and %s degrees\n", description, temperature);
+        System.out.printf("The windchill is %s degrees and the humidity is %s\n\n", windchill, temperature);
         
         /**Proccess booleans*/
         // Based on description
@@ -541,6 +541,12 @@ public class WeatherConditionals
                 error = 7;
             }
         }
-        return "Done!" + error;
+        
+        // One final if statement!
+        if (error != 0)
+        {
+            System.out.printf("\nError: %s\n", error);
+        }
+        return "Done! ";
     }
 }
