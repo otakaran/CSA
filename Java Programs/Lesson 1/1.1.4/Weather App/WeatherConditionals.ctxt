@@ -1,0 +1,4 @@
+#BlueJ class context
+comment0.params=temperature\ windchill\ humidity\ description
+comment0.target=java.lang.String\ getHikingAdvice(int,\ int,\ int,\ java.lang.String)
+numComments=1
