@@ -50,6 +50,11 @@ public class WeatherConditionals
            // Print the weather status
            System.out.println("Too windy or cold! Enjoy watching the weather through the window.");
        }
+       // A very unlikely situation
+       else if (temperature > 100 & description.contains("snow"))
+       {
+           
+       }
        else // Oh no, something went wrong!
        {
            // Print the (error) status
