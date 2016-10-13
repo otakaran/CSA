@@ -1,14 +1,17 @@
 /**
  * A program to carry on conversations with a human user.
  * This version:
- *<ul><li>
  * 		Uses advanced search for keywords 
- *</li><li>
  * 		Will transform statements as well as react to keywords
- *</li></ul>
+ * 
+ * Original:
  * @author Laurie White
  * @version April 2012
  *
+ * Edited:
+ * @author Otakar Andrysek
+ * @date 10/13/16
+ * @version 4.2
  */
 
 public class Magpie4
@@ -21,10 +24,8 @@ public class Magpie4
 	
 	/**
 	 * Gives a response to a user statement
-	 * 
-	 * @param statement
-	 *            the user statement
-	 * @return a response based on the rules given
+	 * @param statement - the user statement
+	 * @return - a response based on the rules given
 	 */
 	public String getResponse(String statement)
 	{
@@ -36,6 +37,7 @@ public class Magpie4
 	    int affection = ((Math.random() * 10) +1);
 	    int anger = ((Math.random() * 10) +1);
 	    
+	    // Decide what is actually said by Magpie
 		if (statement.length() == 0)
 		{
 			response = "Say something, please.";
@@ -62,8 +64,7 @@ public class Magpie4
 
 		else
 		{
-			// Look for a two word (you <something> me)
-			// pattern
+			// Look for a two word (you <something> me) pattern
 			int psn = findKeyword(statement, "you", 0);
 
 			if (psn >= 0
@@ -82,8 +83,8 @@ public class Magpie4
 	/**
 	 * Take a statement with "I want to <something>." and transform it into 
 	 * "What would it mean to <something>?"
-	 * @param statement the user statement, assumed to contain "I want to"
-	 * @return the transformed statement
+	 * @param statement - the user statement, assumed to contain "I want to"
+	 * @return - the transformed statement
 	 */
 	private String transformIWantToStatement(String statement)
 	{
@@ -104,8 +105,8 @@ public class Magpie4
 	/**
 	 * Take a statement with "you <something> me" and transform it into 
 	 * "What makes you think that I <something> you?"
-	 * @param statement the user statement, assumed to contain "you" followed by "me"
-	 * @return the transformed statement
+	 * @param statement - the user statement, assumed to contain "you" followed by "me"
+	 * @return - the transformed statement
 	 */
 	private String transformYouMeStatement(String statement)
 	{
@@ -128,10 +129,10 @@ public class Magpie4
 	 * Search for one word in phrase.  The search is not case sensitive.
 	 * This method will check that the given goal is not a substring of a longer string
 	 * (so, for example, "I know" does not contain "no").  
-	 * @param statement the string to search
-	 * @param goal the string to search for
-	 * @param startPos the character of the string to begin the search at
-	 * @return the index of the first occurrence of goal in statement or -1 if it's not found
+	 * @param statement - the string to search
+	 * @param goal - the string to search for
+	 * @param startPos - the character of the string to begin the search at
+	 * @return - the index of the first occurrence of goal in statement or -1 if it's not found
 	 */
 	private int findKeyword(String statement, String goal, int startPos)
 	{
@@ -171,9 +172,9 @@ public class Magpie4
 	 * Search for one word in phrase.  The search is not case sensitive.
 	 * This method will check that the given goal is not a substring of a longer string
 	 * (so, for example, "I know" does not contain "no").  The search begins at the beginning of the string.  
-	 * @param statement the string to search
-	 * @param goal the string to search for
-	 * @return the index of the first occurrence of goal in statement or -1 if it's not found
+	 * @param statement - the string to search
+	 * @param goal - the string to search for
+	 * @return - the index of the first occurrence of goal in statement or -1 if it's not found
 	 */
 	private int findKeyword(String statement, String goal)
 	{
@@ -182,7 +183,7 @@ public class Magpie4
 
 	/**
 	 * Pick a default response to use if nothing else fits.
-	 * @return a non-committal string
+	 * @return - a non-committal string
 	 */
 	private String getRandomResponse()
 	{
