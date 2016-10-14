@@ -16,9 +16,17 @@
 
 public class Magpie4
 {
-    // Get a default greeting
+    // Emotional Variables (1 to 3)
+    public static int happiness = ((int)(Math.random() * 3) + 1);
+            // 3 = happy, 2 = content, 1 = sad
+    public static int affection = ((int)(Math.random() * 3) + 1);
+            // 3 = lover, 2 = friend, 1 = stranger
+    public static int anger = ((int)(Math.random() * 3) + 1);
+            // 3 = furious, 2 = annoyed, 1 = passive
+    
+            // Get a default greeting
     public String getGreeting()
-    {
+    {      
         return "Hello, let's talk.";
     }
     
@@ -32,42 +40,13 @@ public class Magpie4
         // User entered string
         String response = "";
         
-        // Emotional Variables (1 to 3)
-        int happiness = ((int)(Math.random() * 3) + 1);
-            // 3 = happy, 2 = content, 1 = sad
-        int affection = ((int)(Math.random() * 3) + 1);
-            // 3 = lover, 2 = friend, 1 = stranger
-        int anger = ((int)(Math.random() * 3) + 1);
-            // 3 = furious, 2 = annoyed, 1 = passive
-        
         // Main program code that calls other functions to preform actions
         if (statement.length() == 0)
         {
             response = "Say something, please.";
             
             // Randomly change stats
-            int r = ((int)(Math.random() * 6) + 1);
-            switch (r) 
-            {
-                case 1 :
-                    happiness = decreaseHappiness(happiness);
-                    break;
-                case 2 :
-                    affection = decreaseAffection(affection);
-                    break;
-                case 3 :
-                    anger = decreaseAnger(anger);
-                    break;
-                case 4 :
-                    happiness = increaseHappiness(happiness);
-                    break;
-                case 5 :
-                    affection = increaseAffection(affection);
-                    break;
-                case 6 :
-                    anger = increaseAnger(anger);
-                    break;
-            }
+            changeEmotion();
         }
 
         // Tell the user how magpie is doing (emotionally)
@@ -241,10 +220,40 @@ public class Magpie4
             }
             else
             {
+                changeEmotion();
                 response = getRandomResponse(happiness,affection,anger);
+                changeEmotion();
             }
         }
         return response;
+    }
+    
+    // Randomly change stats (used often for variation)
+    private int changeEmotion()
+    {
+            int r = ((int)(Math.random() * 6) + 1);
+            switch (r) 
+            {
+                case 1 :
+                    happiness = decreaseHappiness(happiness);
+                    break;
+                case 2 :
+                    affection = decreaseAffection(affection);
+                    break;
+                case 3 :
+                    anger = decreaseAnger(anger);
+                    break;
+                case 4 :
+                    happiness = increaseHappiness(happiness);
+                    break;
+                case 5 :
+                    affection = increaseAffection(affection);
+                    break;
+                case 6 :
+                    anger = increaseAnger(anger);
+                    break;
+            }
+            return 0;
     }
     
     // Increases happiness by (1)
@@ -406,14 +415,18 @@ public class Magpie4
         return findKeyword (statement, goal, 0);
     }
 
+    
     /**
-     * Pick a default response to use if nothing else fits.
-     * @return - a non-committal string
+     *
+     * This method chooses a responses based on emotion. To mix it up I randomly change the 
+     * emotional state before and after preforming this.
+     * 
      */
     private String getRandomResponse(int happiness, int affection, int anger)
     {
         String response = "";
         
+        // No documentation here :(
         switch (happiness) {
             case 1:  happiness = 1;
                 switch (affection) {
