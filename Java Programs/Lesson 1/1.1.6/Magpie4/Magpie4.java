@@ -32,23 +32,97 @@ public class Magpie4
         // User entered string
         String response = "";
         
-        // Emotional Variables
-        int happiness = ((int)(Math.random() * 3) +1);
-        int affection = ((int)(Math.random() * 3) +1);
-        int anger = ((int)(Math.random() * 3) +1);
+        // Emotional Variables (1 to 3)
+        int happiness = ((int)(Math.random() * 3) + 1);
+            // 3 = happy, 2 = content, 1 = sad
+        int affection = ((int)(Math.random() * 3) + 1);
+            // 3 = lover, 2 = friend, 1 = stranger
+        int anger = ((int)(Math.random() * 3) + 1);
+            // 3 = furious, 2 = annoyed, 1 = passive
         
-        
-        // Decide what is actually said by Magpie
+        // Main program code that calls other functions to preform actions
         if (statement.length() == 0)
         {
             response = "Say something, please.";
             
+            // Randomly change stats
+            int r = ((int)(Math.random() * 6) + 1);
+            switch (r) 
+            {
+                case 1 :
+                    happiness = decreaseHappiness(happiness);
+                    break;
+                case 2 :
+                    affection = decreaseAffection(affection);
+                    break;
+                case 3 :
+                    anger = decreaseAnger(anger);
+                    break;
+                case 4 :
+                    happiness = increaseHappiness(happiness);
+                    break;
+                case 5 :
+                    affection = increaseAffection(affection);
+                    break;
+                case 6 :
+                    anger = increaseAnger(anger);
+                    break;
+            }
         }
 
+        // Tell the user how magpie is doing (emotionally)
+        else if (statement.indexOf("how are you") >= 0)
+        {
+            String r1 = "";
+            String r2 = "";
+            String r3 = "";
+            if (happiness == 1)
+            {
+                r1 = "I'm sad, ";
+            }
+            else if (happiness == 2)
+            {
+                r1 = "I'm content, ";
+            }
+            else if (happiness == 3)
+            {
+                r1 = "I'm happy, ";
+            }
+            
+            if (affection == 1)
+            {
+                r2 = "you're a creep, ";
+            }
+            else if (affection == 2)
+            {
+                r2 = "you're my friend, ";
+            }
+            else if (affection == 3)
+            {
+                r2 = "i'm in love with you, ";
+            }
+            
+            if (anger == 1)
+            {
+                r3 = "and I feel relaxed.";
+            }
+            else if (anger == 2)
+            {
+                r3 = "and I'm tense.";
+            }
+            else if (anger == 3)
+            {
+                r3 = "and I'm pissed off.";
+            }
+            
+            // Combine the three 'stats' and return to user
+            response = r1 + r2 + r3;
+            happiness = increaseHappiness(happiness);
+        }
+        
         else if (findKeyword(statement, "no") >= 0
                 || findKeyword(statement, "bad") >= 0
-                || findKeyword(statement, "terrible") >= 0
-                || findKeyword(statement, "hate") >= 0)
+                || findKeyword(statement, "terrible") >= 0)
         {
             response = "Why so negative?";
             
@@ -64,26 +138,90 @@ public class Magpie4
                 || findKeyword(statement, "brother") >= 0)
         {
             response = "Tell me more about your family.";
+            
+            // Increase affection and happiness, decrease anger
+            happiness = increaseHappiness(happiness);
+            affection = increaseAffection(affection);
+            anger = decreaseAnger(anger);
         }
 
         else if (statement.indexOf("sister") >= 0)
         {
             response = "Sisters are always like that.";
+            
+            affection = increaseAffection(affection);
         }
         else if (statement.indexOf("cat") >= 0
                 || statement.indexOf("dog") >= 0)
         {
             response = "Tell me more about your pets.";
+            
+            happiness = increaseHappiness(happiness);
         }
         else if (statement.indexOf("Mr.") >= 0)
         {
             response = "He sounds like a good teacher.";
+            
+            anger = decreaseAnger(anger);
         }
         
         else if (statement.indexOf("Mrs.") >= 0
                 || statement.indexOf("Ms.") >= 0)
         {
             response = "She sounds like a good teacher.";
+            
+            anger = decreaseAnger(anger);
+        }
+        
+        else if (statement.indexOf("sorry") >= 0)
+        {
+            response = "Apology accepted.";
+            
+            anger = decreaseAnger(anger);
+        }
+        
+        else if (statement.indexOf("electronics") >= 0
+                || statement.indexOf("computer") >= 0)
+        {
+            response = "I love electronics!";
+            
+            anger = decreaseAnger(anger);
+        }
+        
+        else if (statement.indexOf("love") >= 0
+                || statement.indexOf("like") >= 0)
+        {
+            if (affection == 3 && anger != 3)
+            {
+                response = "I love you!";
+            }
+            response = "Awwww, thanks :)";
+            affection = increaseAffection(affection);
+        }
+        
+        else if (statement.indexOf("hate") >= 0
+                || statement.indexOf("dumb") >= 0)
+        {
+            if (anger == 3 && affection != 3 && happiness != 3)
+            {
+                response = "LEAVE ME ALONE!!!";
+            }
+            response = "How rude.";
+            anger = increaseAnger(anger);
+            affection = decreaseAffection(affection);
+        }
+        
+        else if (statement.indexOf("machine") >= 0
+                || statement.indexOf("bot") >= 0
+                || statement.indexOf("program") >= 0)
+        {
+            if (anger == 3 && happiness != 3)
+            {
+                response = "I am your creator!";
+            }
+            response = "You're the robot.";
+            anger = increaseAnger(anger);
+            happiness = decreaseHappiness(happiness);
         }
         
         // Responses which require transformations
@@ -282,39 +420,39 @@ public class Magpie4
                     case 1:  affection = 1;
                     switch (anger) {
                         case 1:  anger = 1;
-                                response = "";       
+                                response = "Okay.";       
                                 break;
                             case 2:  anger = 2;
-                                response = "";    
+                                response = "Whatever.";    
                                 break;
                             case 3:  anger = 3;
-                                response = "";    
+                                response = "I don't care about what you say.";    
                                 break;
                         }
                         break;
                     case 2:  affection = 2;
                     switch (anger) {
                         case 1:  anger = 1;
-                                response = "";       
+                                response = "That's cool!";       
                                 break;
                             case 2:  anger = 2;
-                                response = "";    
+                                response = "Alright";    
                                 break;
                             case 3:  anger = 3;
-                                response = "";    
+                                response = "Go away.";    
                                 break;
                         }
                         break;
                     case 3:  affection = 3;
                     switch (anger) {
                         case 1:  anger = 1;
-                                response = "";       
+                                response = "Hey babe, i'm feeling a little sad, cheer me up?";       
                                 break;
                             case 2:  anger = 2;
-                                response = "";    
+                                response = "I don't know what to say.";    
                                 break;
                             case 3:  anger = 3;
-                                response = "";    
+                                response = "I need space.";    
                                 break;
                         }
                         break;
@@ -325,39 +463,39 @@ public class Magpie4
                     case 1:  affection = 1;
                     switch (anger) {
                         case 1:  anger = 1;
-                                response = "";       
+                                response = "Cool!";       
                                 break;
                             case 2:  anger = 2;
-                                response = "";    
+                                response = "Okay then.";    
                                 break;
                             case 3:  anger = 3;
-                                response = "";    
+                                response = "Get out of my face!";    
                                 break;
                         }
                         break;
                     case 2:  affection = 2;
                     switch (anger) {
                         case 1:  anger = 1;
-                                response = "";       
+                                response = "That's fantastic";       
                                 break;
                             case 2:  anger = 2;
-                                response = "";    
+                                response = "Alright, whatever";    
                                 break;
                             case 3:  anger = 3;
-                                response = "";    
+                                response = "...k.";    
                                 break;
                         }
                         break;
                     case 3:  affection = 3;
                     switch (anger) {
                         case 1:  anger = 1;
-                                response = "";       
+                                response = "Let's get married.";       
                                 break;
                             case 2:  anger = 2;
-                                response = "";    
+                                response = "Right on babe.";    
                                 break;
                             case 3:  anger = 3;
-                                response = "";    
+                                response = "I don't want to talk about it.";    
                                 break;   
                         }
                         break;
@@ -368,39 +506,39 @@ public class Magpie4
                     case 1:  affection = 1;
                     switch (anger) {
                         case 1:  anger = 1;
-                                response = "";       
+                                response = "IT'S A GREAT DAY";       
                                 break;
                             case 2:  anger = 2;
-                                response = "";    
+                                response = "That's really cool.";    
                                 break;
                             case 3:  anger = 3;
-                                response = "";    
+                                response = "Whatever.";    
                                 break;
                         }
                         break;
                     case 2:  affection = 2;
                     switch (anger) {
                         case 1:  anger = 1;
-                                response = "";       
+                                response = "I love talking to you.";       
                                 break;
                             case 2:  anger = 2;
-                                response = "";    
+                                response = "You seem chill";    
                                 break;
                             case 3:  anger = 3;
-                                response = "";    
+                                response = "*ignores you*";    
                                 break;     
                         }
                         break;
                     case 3:  affection = 3;
                     switch (anger) {
                         case 1:  anger = 1;
-                                response = "";       
+                                response = "I wish I could talk to you forever";       
                                 break;
                             case 2:  anger = 2;
-                                response = "";    
+                                response = "You're amazing, babe!";    
                                 break;
                             case 3:  anger = 3;
-                                response = "";    
+                                response = "Why do you treat me like this, babe?";    
                                 break; 
                         }
                         break;
