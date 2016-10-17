@@ -1,4 +1,0 @@
-#BlueJ class context
-comment0.params=temperature\ description
-comment0.target=java.lang.String\ getWeatherAdvice(int,\ java.lang.String)
-numComments=1
