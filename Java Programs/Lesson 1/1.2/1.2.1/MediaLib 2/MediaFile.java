@@ -1,3 +1,4 @@
+// Important library imports
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileWriter;
@@ -32,6 +33,7 @@ public class MediaFile
                 e.printStackTrace();
             }
         }
+        
         try {
             if (in.hasNext()) {
                 String s = in.nextLine();
@@ -46,7 +48,6 @@ public class MediaFile
             e.printStackTrace();
         }
         return null;
-
     }
 
     /**
@@ -66,17 +67,16 @@ public class MediaFile
                 e.printStackTrace();
             }
         }
-
+        
         try {
             out.write(s);
-            // out.newLine();
+            out.newLine();
             out.write("|");
         }
         catch (Exception e) {
             System.err.println("Cannot write file!");
             e.printStackTrace();
         }
-
     }
 
     /**

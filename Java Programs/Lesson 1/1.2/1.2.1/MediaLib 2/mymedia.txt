@@ -1,0 +1,13 @@
+Hello|3
+Goodbye|4
+Shoe|8
+Water|3
+Cow|8
+Grass|10
+Fire|5
+Computer|3
+Hamster|6
+Oregon|5
+Meme|3
+Coolbeans|6
+Dane|5

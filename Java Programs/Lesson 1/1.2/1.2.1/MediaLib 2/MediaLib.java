@@ -4,8 +4,8 @@
  * rogram to learn about objects and classes in Java.
  * 
  * @author (Otakar Andrysek) 
- * @version (2.2)
- * @date (9/19/2016)
+ * @version (3.0)
+ * @date (10/20/2016)
  */
 
 public class MediaLib
@@ -90,5 +90,11 @@ public class MediaLib
        System.out.println(book1.getTitle());
        book1.setRating(1);
        System.out.println(book1.getRating());
+       
+       // 1.2.1
+
+       
+       LoopingMediaLib.main();
+       
    }
 }
