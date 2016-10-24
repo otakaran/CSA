@@ -21,9 +21,9 @@ The root ( / ) directory for this repository will be divided by the 4-6 PLTW Uni
 
 ### Footnotes
 ###### Links
-[Link to this GitHub page.](http://google.com)                    
-[Link to the GitHub website for this repo.](http://google.com)                      
-[Link to my CTF (Programming) team / club.](http://google.com)
+[Link to this GitHub page.](https://github.com/otakar-sst/CSA)                    
+[Link to the GitHub website for this repo.](http://csa.sstctf.org)                      
+[Link to my CTF (Programming) team / club.](http://sstctf.org)
 ###### Questions?
 If you have any questions, feel free contact me: otakar@sstctf.org
 ###### Credit
