@@ -96,4 +96,12 @@ public class Song
             this.totalRatings += rating;
             this.averageCost = totalCost / numSongs;
     }
+    
+    // New constructor for 1.2.2
+    public Song(String title) {
+            this.title = title;
+            this.numSongs += 1;
+            //this.totalRatings += rating;
+            //this.averageCost = totalCost / numSongs;
+    }
 }

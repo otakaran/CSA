@@ -10,6 +10,10 @@ public class ArrayMediaLib
 {
     public static void main()
     {
+        /**
+         * Part V
+        */
+        
         // Create an array of five strings. (initalization list)
         String[ ] sharingFriends = {
             new String("Tamir"),
@@ -40,5 +44,29 @@ public class ArrayMediaLib
         }
         float meanDays = sumDays / daysBetweenPurchase.length;
         System.out.println(meanDays);  // Print elements in order
+        
+        /**
+         * Part IV
+        */
+        
+        // Top ten billboard songs in one array
+        Song[ ] topTenSongs = {
+            new Song("THE TWIST"),
+            new Song("SMOOTH"),
+            new Song("MACK THE KNIFE"),
+            new Song("HOW DO I LIVE"),
+            new Song("PARTY ROCK ANTHEM"),
+            new Song("I GOTTA FEELING"),
+            new Song("MACARENA (BAYSIDE BOYS MIX)"),
+            new Song("PHYSICAL"),
+            new Song("YOU LIGHT UP MY LIFE"),
+            new Song("HEY JUDE")
+        };
+        
+        // Print the top songs
+        for (Song s: topTenSongs)
+        {
+            System.out.println(s.getTitle());
+        }
     }
 }
