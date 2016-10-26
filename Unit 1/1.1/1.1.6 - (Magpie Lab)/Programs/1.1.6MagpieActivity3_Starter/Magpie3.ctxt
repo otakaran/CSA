@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=
+comment0.target=java.lang.String\ getGreeting()
+comment0.text=\r\n\ Get\ a\ default\ greeting\r\n\ \r\n\ @return\ a\ greeting\r\n
+comment1.params=statement
+comment1.target=java.lang.String\ getResponse(java.lang.String)
+comment1.text=\r\n\ Gives\ a\ response\ to\ a\ user\ statement\r\n\ \r\n\ @param\ statement\r\n\ \ \ \ \ \ \ \ \ \ \ \ the\ user\ statement\r\n\ @return\ a\ response\ based\ on\ the\ rules\ given\r\n
+comment2.params=statement\ goal\ startPos
+comment2.target=int\ findKeyword(java.lang.String,\ java.lang.String,\ int)
+comment2.text=\r\n\ Search\ for\ one\ word\ in\ phrase.\ The\ search\ is\ not\ case\r\n\ sensitive.\ This\ method\ will\ check\ that\ the\ given\ goal\r\n\ is\ not\ a\ substring\ of\ a\ longer\ string\ (so,\ for\r\n\ example,\ "I\ know"\ does\ not\ contain\ "no").\r\n\ \r\n\ @param\ statement\r\n\ \ \ \ \ \ \ \ \ \ \ \ the\ string\ to\ search\r\n\ @param\ goal\r\n\ \ \ \ \ \ \ \ \ \ \ \ the\ string\ to\ search\ for\r\n\ @param\ startPos\r\n\ \ \ \ \ \ \ \ \ \ \ \ the\ character\ of\ the\ string\ to\ begin\ the\r\n\ \ \ \ \ \ \ \ \ \ \ \ search\ at\r\n\ @return\ the\ index\ of\ the\ first\ occurrence\ of\ goal\ in\r\n\ \ \ \ \ \ \ \ \ statement\ or\ -1\ if\ it's\ not\ found\r\n
+comment3.params=statement\ goal
+comment3.target=int\ findKeyword(java.lang.String,\ java.lang.String)
+comment3.text=\r\n\ Search\ for\ one\ word\ in\ phrase.\ The\ search\ is\ not\ case\r\n\ sensitive.\ This\ method\ will\ check\ that\ the\ given\ goal\r\n\ is\ not\ a\ substring\ of\ a\ longer\ string\ (so,\ for\r\n\ example,\ "I\ know"\ does\ not\ contain\ "no").\ The\ search\r\n\ begins\ at\ the\ beginning\ of\ the\ string.\r\n\ \r\n\ @param\ statement\r\n\ \ \ \ \ \ \ \ \ \ \ \ the\ string\ to\ search\r\n\ @param\ goal\r\n\ \ \ \ \ \ \ \ \ \ \ \ the\ string\ to\ search\ for\r\n\ @return\ the\ index\ of\ the\ first\ occurrence\ of\ goal\ in\r\n\ \ \ \ \ \ \ \ \ statement\ or\ -1\ if\ it's\ not\ found\r\n
+comment4.params=
+comment4.target=java.lang.String\ getRandomResponse()
+comment4.text=\r\n\ Pick\ a\ default\ response\ to\ use\ if\ nothing\ else\ fits.\r\n\ \r\n\ @return\ a\ non-committal\ string\r\n
+numComments=5
