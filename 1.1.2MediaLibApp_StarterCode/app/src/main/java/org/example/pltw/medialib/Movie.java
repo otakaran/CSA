@@ -1,0 +1,92 @@
+package org.example.pltw.medialib;
+
+/**
+ * Created by 280230 on 11/4/2016.
+ */
+public class Movie {
+    // Instance variables
+    private int rating;
+    private String title = "";
+
+    // Duration variables
+    private int duration;
+    private int hours;
+    private int minutes;
+    private static int totalDuration;
+    private static double averageDuration;
+
+    /**
+     * Constructor for objects of class Movie
+     */
+    public Movie()
+    {
+        // Initialise instance variables
+        rating = 0;
+        title = "";
+        hours = 0;
+        duration = 0;
+        minutes = 0;
+    }
+
+    public String getTitle()
+    {
+        return title;
+    }
+
+    public void setTitle(String t)
+    {
+        title = t;
+    }
+
+    public int getRating()
+    {
+        return rating;
+    }
+
+    public void setRating(int r)
+    {
+        rating = r;
+    }
+
+    public String getDuration()
+    {
+        this.hours = duration / 60;
+        this.minutes = duration % 60;
+        return "This movie is " + getHours() + " hours and " + getMinutes() + " minutes.";
+    }
+
+    public void setDuration(int d)
+    {
+        duration = d;
+    }
+
+    public int getHours()
+    {
+        return hours;
+    }
+
+    public int getMinutes()
+    {
+        return minutes;
+    }
+
+    public String getTotalDuration()
+    {
+        return "Hours: " + totalDuration / 60 + " Minutes: " + totalDuration % 60;
+    }
+
+    public String getAverageDuration()
+    {
+        return "Hours: " + Math.round(averageDuration / 60) + " Minutes: " + averageDuration % 60;
+    }
+
+    public Movie(String title, int duration, int rating)
+    {
+        this.title = title;
+        this.rating = rating;
+        this.duration = duration;
+        this.totalDuration += duration;
+        this.averageDuration = totalDuration / 3;
+    }
+}
+
