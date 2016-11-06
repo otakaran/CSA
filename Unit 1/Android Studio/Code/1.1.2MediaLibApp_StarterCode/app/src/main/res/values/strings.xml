@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Media Library</string>
+    <string name="mediaLibButtonText">Show Library</string>
+</resources>
