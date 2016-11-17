@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ main()
+comment1.params=songs
+comment1.target=int\ printSongs(Song[])
+comment2.params=songs
+comment2.target=int\ bestSong(Song[])
+comment3.params=songs\ bestSongValue
+comment3.target=int\ worstSong(Song[],\ int)
+numComments=4
