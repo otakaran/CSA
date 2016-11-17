@@ -1,8 +1,8 @@
 /**
- * Write a description of class Algorithms here. [Coming soon]
+ * A collection 
  * 
  * @author (Otakar Andrysek) 
- * @version (1.0.0)
+ * @version (2.0.0)
  * @date (11/16/2016)
  * 
  */
@@ -19,7 +19,7 @@ public class Algorithms
             new Song("HOW DO I LIVE", 10),
             new Song("PARTY ROCK ANTHEM", 1),
             new Song("I GOTTA FEELING", 4),
-            new Song("MACARENA (BAYSIDE BOYS MIX)", 8),
+            new Song("MACARENA (BAYSIDE BOYS MIX)", 9),
             new Song("PHYSICAL", 5),
             new Song("YOU LIGHT UP MY LIFE", 3),
             new Song("HEY JUDE", 9)
@@ -29,8 +29,9 @@ public class Algorithms
         printSongs(songs);
         int bestSongValue = bestSong(songs);
         int worstSongValue = worstSong(songs, bestSongValue);
-
+        tiedForSecond(songs, bestSongValue);
     }
+    
     public static int printSongs(Song[] songs)
     {
         // List all songs in the array
@@ -73,5 +74,28 @@ public class Algorithms
         System.out.println("\nThe worst song is");
         System.out.println("Name: " + songs[position].getTitle() + " | Rating " + songs[position].getRating());
         return songs[position].getRating();
+    }
+    
+    public static int tiedForSecond(Song[] songs, int bestSongValue)
+    {
+        System.out.println("\n");
+        int k = 0;
+        int m = 1;
+        for (int j = 1; j < 9; j++)
+        {
+            for (int i = 0; i < songs.length; i++)
+            {
+                if (songs[i].getRating() == (bestSongValue - j))
+                {
+                    if (j > m)
+                    {
+                        return 0;
+                    }
+                    m = j;
+                    System.out.println("The second place result(s) | Name: " + songs[i].getTitle() + " | Rating " + songs[i].getRating());
+                }
+            }
+        }
+        return -1;
     }
 }

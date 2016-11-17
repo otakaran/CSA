@@ -7,4 +7,6 @@ comment2.params=songs
 comment2.target=int\ bestSong(Song[])
 comment3.params=songs\ bestSongValue
 comment3.target=int\ worstSong(Song[],\ int)
-numComments=4
+comment4.params=songs\ bestSongValue
+comment4.target=int\ tiedForSecond(Song[],\ int)
+numComments=5
