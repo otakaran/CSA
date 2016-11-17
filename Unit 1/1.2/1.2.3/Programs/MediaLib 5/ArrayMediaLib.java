@@ -72,14 +72,40 @@ public class ArrayMediaLib
         /**
          * Added for 1.2.3 Part II 
         */
-        int index = SongFinder.findTitle(topTenSongs, "SMOOTH");
+        int index = SongFinder.findTitle(topTenSongs, "PHYSICAL");
         if (index >=0 ) 
         {
             System.out.println("Found " + topTenSongs[index].getTitle());
         }
         else  
         {
+            //System.out.println(index);
             System.out.println("Song not found!");
+        }
+        
+        /**
+         * Added for 1.2.3 Part III 
+        */
+        index = SongFinder.getIndexLastDiscount(topTenSongs, 1.00);
+        if (index >= 0 ) {
+            System.out.println("Discount found " + topTenSongs[index].getTitle());
+        }
+        else {
+            System.out.println("No songs are discounted");
+        }
+        
+        /**
+         * Added for 1.2.3 Part IV 
+        */
+        System.out.println("--Find last song --");
+        index = SongFinder.getIndexLastTitle(topTenSongs);
+        if (index >= 0 ) 
+        {
+            System.out.println("Last title: " + topTenSongs[index].getTitle());
+        }
+        else 
+        {
+            System.out.println("You have a blank title!");
         }
     }
 }

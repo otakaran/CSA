@@ -104,4 +104,13 @@ public class Song
             //this.totalRatings += rating;
             //this.averageCost = totalCost / numSongs;
     }
+    
+    // New constructor for 1.2.3 Part VI
+    // Used for Algorithms class
+    public Song(String title, int rating) {
+            this.title = title;
+            this.rating = rating;
+            this.numSongs += 1;
+            this.totalRatings += rating;
+    }
 }
