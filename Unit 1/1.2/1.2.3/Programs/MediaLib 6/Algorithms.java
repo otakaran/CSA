@@ -26,10 +26,12 @@ public class Algorithms
         };
         
         // Call other methods
-        printSongs(songs);
+        //printSongs(songs);
         int bestSongValue = bestSong(songs);
         int worstSongValue = worstSong(songs, bestSongValue);
         tiedForSecond(songs, bestSongValue);
+        
+        deleteSong(songs, "SMOOTH");
     }
     
     public static int printSongs(Song[] songs)
@@ -37,7 +39,7 @@ public class Algorithms
         // List all songs in the array
         for (int i = 0; i < songs.length; i++)
         {
-            System.out.println("Song " + i + " | Name: " + songs[i].getTitle() + " | Rating " + songs[i].getRating());
+            System.out.println("Song " + (i+1) + " | Name: " + songs[i].getTitle() + " | Rating " + songs[i].getRating());
         }
         return 0;
     }
@@ -97,5 +99,32 @@ public class Algorithms
             }
         }
         return -1;
+    }
+    
+    public static int deleteSong(Song[] songs, String songToDelete)
+    {
+        int position = -1;
+        String storedTitle = "ERROR";
+        for (int i = 0; i < songs.length; i++)
+        {
+            System.out.println("i = " + i);
+            storedTitle = songs[i].getTitle();
+            System.out.println(storedTitle);
+            if (storedTitle.equals(songToDelete) || i > position && songs.length > i)
+            {
+                System.out.println("YO");
+                if (i == 9)
+                {
+                    System.out.println("HAHA");
+                    songs[8] = null;
+                    return 1;
+                }
+                System.out.println("ERR");
+                position = i;
+                songs[i] = songs[i + 1];
+            }
+        }
+        printSongs(songs);
+        return 1;
     }
 }
