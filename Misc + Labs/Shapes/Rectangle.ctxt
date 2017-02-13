@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Rectangle()
+comment0.text=No\ argument\ constructor
+comment1.params=firstPoint\ lastPoint
+comment1.target=Rectangle(java.awt.Point,\ java.awt.Point)
+comment1.text=\n\ Constructor\ that\ takes\ two\ points\ to\ define\ the\ shape\n\ @param\ firstPoint\ \ \ first\ point\ used\ in\ defining\ the\ shape\n\ @param\ secondPoint\ \ second\ point\ used\ in\ defining\ the\ shape\n
+comment2.params=x1\ y1\ x2\ y2
+comment2.target=Rectangle(int,\ int,\ int,\ int)
+comment2.text=\n\ Constructor\ that\ takes\ x1,y1,x2,y2\n\ @param\ x1\ \ \ \ x\ value\ of\ the\ first\ point\ that\ defines\ the\ shape\n\ @param\ y1\ \ \ \ y\ value\ of\ the\ first\ point\ that\ defines\ the\ shape\n\ @param\ x2\ \ \ \ x\ value\ of\ the\ second\ point\ that\ defines\ the\ shape\n\ @param\ y2\ \ \ \ y\ value\ of\ the\ second\ point\ that\ defines\ the\ shape\n
+comment3.params=g
+comment3.target=void\ draw(java.awt.Graphics)
+comment3.text=\ Draw\ the\ shape\n\ @param\ g\ \ \ the\ graphics\ context\ on\ which\ to\ draw\n
+numComments=4

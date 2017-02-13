@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.params=
+comment0.target=ButtonPanel()
+comment0.text=A\ constructor\ that\ takes\ no\ arguments
+comment1.params=theHandler
+comment1.target=ButtonPanel(ShapeInterface)
+comment1.text=\ A\ constructor\ that\ uses\ the\ default\ size\ but\ takes\ the\ handler\n\ @param\ theHandler\ \ \ \ the\ handler\ of\ shape\ interface\ type\n
+comment2.params=
+comment2.target=void\ init()
+comment2.text=Method\ to\ initialize\ the\ panel
+comment3.params=e
+comment3.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment4.params=e
+comment4.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment5.params=argv
+comment5.target=void\ main(java.lang.String[])
+numComments=6

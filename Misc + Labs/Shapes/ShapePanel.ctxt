@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=ShapePanel()
+comment0.text=A\ constructor\ that\ takes\ no\ arguments
+comment1.params=
+comment1.target=void\ init()
+comment1.text=Method\ to\ initialize\ the\ panel
+comment2.params=argv
+comment2.target=void\ main(java.lang.String[])
+numComments=3

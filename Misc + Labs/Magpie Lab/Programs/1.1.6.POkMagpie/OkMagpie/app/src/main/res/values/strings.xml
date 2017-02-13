@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">OkMagpie</string>
+    <string name="speech_prompt">Speak now.</string>
+    <string name="speech_not_supported">Sorry, speech not supported on your device.</string>
+    <string name="user_input_hint">Enter Text or Click Talk to Magpie!</string>
+</resources>

@@ -28,10 +28,10 @@ public class Algorithms
         // Call other methods
         //printSongs(songs);
         int bestSongValue = bestSong(songs);
-        int worstSongValue = worstSong(songs, bestSongValue);
+        //int worstSongValue = worstSong(songs, bestSongValue);
         tiedForSecond(songs, bestSongValue);
         
-        deleteSong(songs, "SMOOTH");
+        //deleteSong(songs, "SMOOTH");
     }
     
     public static int printSongs(Song[] songs)
@@ -78,27 +78,31 @@ public class Algorithms
         return songs[position].getRating();
     }
     
-    public static int tiedForSecond(Song[] songs, int bestSongValue)
+    public static void tiedForSecond(Song[] songs, int topSong)
     {
-        System.out.println("\n");
-        int k = 0;
-        int m = 1;
-        for (int j = 1; j < 9; j++)
+        topSong = songs[0].getRating();
+        int secondSong = (topSong * 10);
+        for (Song i : songs)
         {
-            for (int i = 0; i < songs.length; i++)
+            if (i.getRating() < topSong)
             {
-                if (songs[i].getRating() == (bestSongValue - j))
-                {
-                    if (j > m)
-                    {
-                        return 0;
-                    }
-                    m = j;
-                    System.out.println("The second place result(s) | Name: " + songs[i].getTitle() + " | Rating " + songs[i].getRating());
-                }
+                topSong = i.getRating();
             }
         }
-        return -1;
+        for (Song i : songs)
+        {
+            if (i.getRating() < secondSong && i.getRating() > topSong) 
+            {
+                secondSong = i.getRating();
+            }  
+        }
+        for (Song i : songs)
+        {
+            if (i.getRating() == secondSong)
+            {
+                System.out.println("Second best song(s)" + i.getTitle());
+            }
+        }
     }
     
     public static int deleteSong(Song[] songs, String songToDelete)
